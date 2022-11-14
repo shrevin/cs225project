@@ -1,12 +1,19 @@
 #pragma once
-// #ifndef NODE_HPP
-// #define NODE_HPP
-
-// #endif
+#include <iostream>
+using namespace std;
 
 class Node {
     public:
+        // constructor
+        Node();
+        Node(std::string id, std::string subreddit_name); 
+        std::string get_post_id();
+        std::string get_source_subreddit_name();
+        void set_source_subreddit_name(std::string name);
 
     private:
-    
+        std::string _post_id;
+        std::string _source_subreddit_name;    
 };
+
+
