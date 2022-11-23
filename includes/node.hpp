@@ -7,8 +7,8 @@ class Node {
         // constructor
         Node();
         Node(std::string id, std::string subreddit_name); 
-        std::string get_post_id();
-        std::string get_source_subreddit_name();
+        std::string get_post_id() const;
+        std::string get_source_subreddit_name() const;
         void set_source_subreddit_name(std::string name);
 
     private:

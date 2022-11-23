@@ -1,17 +1,21 @@
 #pragma once
-#include "Node.hpp"
+#include "node.hpp"
 
 #include <iostream>
 
 class Edge {
     public:
-        void setEdgeWeight(int weight);
-        int getEdgeWeight();
-        Node getSrc();
-        Node getDest();
+        Edge() = default;
+        Edge(Node src, Node dest, double weight);
+        void setEdgeWeight(double weight);
+        void setSrc(Node src);
+        void setDest(Node dest);
+        int getEdgeWeight() const;
+        Node getSrc() const;
+        Node getDest() const;
     
     private:
         Node _src;
         Node _dest;
-        int _weight;
+        double _weight;
 };

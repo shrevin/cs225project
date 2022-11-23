@@ -8,11 +8,11 @@ Node::Node(std::string set_id, std::string set_subreddit_name) {
     _post_id = set_id;
     _source_subreddit_name = set_subreddit_name; 
 }
-std::string Node::get_post_id() {
+std::string Node::get_post_id() const{
     return _post_id;
 }
 
-std::string Node::get_source_subreddit_name() {
+std::string Node::get_source_subreddit_name() const{
     return _source_subreddit_name;
 }
 
