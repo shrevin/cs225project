@@ -1,17 +1,20 @@
 #include "graph.hpp"
 
 
+
 Graph::Graph() {
+
 }
-void Graph::addEdge(Node src, Node dest, Edge edge) {
-    if (adjacency_list.find(src) == adjacencygit _list.end()) {
+
+void Graph::addEdge(Vertex src, Vertex dest, Edge edge) {
+    if (adjacency_list.find(src) == adjacency_list.end()) {
         //std::unordered_map<Node, Edge> map = std::unordered_map<Node, Edge>(); //= unordered_map<Vertex, Edge>();
         // map2.insert({dest, edge});
-        adjacency_list[src] = std::unordered_map<Node, Edge>();
-        adjacency_list[src].insert({src, map2});
+        adjacency_list[src] = std::unordered_map<Vertex, Edge>();
+        adjacency_list[src].insert({dest, edge});
         //adjacency_list[src][dest] = edge;
     } else {
-        adjacency_list[src][dest] = edge;
+        adjacency_list[src].insert({dest, edge});
         // std::unordered_map<Node, Edge> temp = adjacency_list[src];
         // temp.insert(dest, edge);
 
@@ -42,21 +45,24 @@ void Graph::readCSV(std::string path) {
         double readability = std::stod(entries.at(22));
         // if adjacency_list does not source_id, create a node and add it to the map and create another map as its value
         // if adjacency_list does contain current subreddit, add dest node to the map<Node, Edge>, and create edge
-        Node src = Node(entries.at(2), entries.at(0));
-        Node dest = Node(entries.at(2), entries.at(1));
+        Vertex src =  entries.at(0);
+        //Node(entries.at(2), entries.at(0));
+        Vertex dest = entries.at(1);
+        //Node(entries.at(2), entries.at(1));
         Edge edge = Edge(src, dest, readability);
         addEdge(src, dest, edge);
     }
 }
 
-// void Graph::printGraph() const {
-//     for (auto i = adjacency_list.begin(); i != adjacency_list.end(); i++) {
-//         std::map<Node, Edge> edges = i->second;
-//         std::cout << "NODE: " << i->first.get_source_subreddit_name(); 
-//         for (auto j = edges.begin(); j != edges.end(); j++) {
-//             std::cout << " " << j->first.get_source_subreddit_name();
-//         }
-//         std::cout << std::endl;
-//     }
+void Graph::printGraph() const {
+    for (auto i = adjacency_list.begin(); i != adjacency_list.end(); i++) {
+        std::unordered_map<Vertex, Edge> edges = i->second;
+        std::cout << "NODE: " << i->first;
+        std::cout << "  NODES:";
+        for (auto j = edges.begin(); j != edges.end(); j++) {
+            std::cout << " " << j->first << " readability " << j->second.getEdgeWeight();
+        }
+        std::cout << std::endl;
+    }
     
-// }
+}

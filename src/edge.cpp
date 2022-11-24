@@ -1,28 +1,28 @@
 #include "edge.hpp"
 
-Edge::Edge(Node src, Node dest, double weight) : _src(src), _dest(dest), _weight(weight) {
+Edge::Edge(Vertex src, Vertex dest, double weight) : _src(src), _dest(dest), _weight(weight) {
 }
 
 void Edge::setEdgeWeight(double weight) {
     _weight = weight;
 }
 
-void Edge::setSrc(Node src) {
+void Edge::setSrc(Vertex src) {
     _src = src;
 }
 
-void Edge::setDest(Node dest) {
+void Edge::setDest(Vertex dest) {
     _dest = dest;
 }
 
-int Edge::getEdgeWeight() const {
+double Edge::getEdgeWeight() const {
     return _weight;
 }
 
-Node Edge::getSrc() const {
+Vertex Edge::getSrc() const {
     return _src;
 }
 
-Node Edge::getDest() const {
+Vertex Edge::getDest() const {
     return _dest;
 }

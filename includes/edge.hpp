@@ -1,21 +1,21 @@
-#pragma once
-#include "node.hpp"
-
 #include <iostream>
+#include <string>
+
+typedef std::string Vertex;
 
 class Edge {
     public:
         Edge() = default;
-        Edge(Node src, Node dest, double weight);
+        Edge(Vertex src, Vertex dest, double weight);
         void setEdgeWeight(double weight);
-        void setSrc(Node src);
-        void setDest(Node dest);
-        int getEdgeWeight() const;
-        Node getSrc() const;
-        Node getDest() const;
+        void setSrc(Vertex src);
+        void setDest(Vertex dest);
+        double getEdgeWeight() const;
+        Vertex getSrc() const;
+        Vertex getDest() const;
     
     private:
-        Node _src;
-        Node _dest;
+        Vertex _src;
+        Vertex _dest;
         double _weight;
 };
