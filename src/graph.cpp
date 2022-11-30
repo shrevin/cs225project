@@ -38,7 +38,11 @@ void Graph::readCSV(std::string path) {
     std::ifstream csv(path);
     while (csv.good()) {
         std::string line;
-        std::getline(csv, line);  // line contains the first line
+        std::getline(csv, line);
+        if (line == "") {
+            continue;
+        }  
+        // line contains the first line
         std::vector<std::string> entries;
         splitString(line, ',', entries);
         // readability is at index 22
@@ -65,4 +69,8 @@ void Graph::printGraph() const {
         std::cout << std::endl;
     }
     
+}
+
+std::unordered_map<Vertex, std::unordered_map<Vertex, Edge>> Graph::getAdjacencyList() {
+    return adjacency_list;
 }

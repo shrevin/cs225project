@@ -2,12 +2,9 @@
 #include "graph.hpp"
 
 int main() {
-    // std::cout<<"hello"<<std::endl;
-    // Node n = Node();
-    // n.set_source_subreddit_name("shreya_fan_club");
-    // std::cout << n.get_source_subreddit_name() << std::endl;
     Graph g = Graph();
-    g.readCSV("./data/sample.csv");
+    g.readCSV("./data/sample_emptyline.csv");
     g.printGraph();
+
     return 0;
 }
