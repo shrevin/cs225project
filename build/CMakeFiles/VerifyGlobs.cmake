@@ -8,7 +8,6 @@ set(OLD_GLOB
   "/workspaces/CS 225/release-f22/cs225project/src/edge.cpp"
   "/workspaces/CS 225/release-f22/cs225project/src/graph.cpp"
   "/workspaces/CS 225/release-f22/cs225project/src/main.cpp"
-  "/workspaces/CS 225/release-f22/cs225project/src/node.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -20,7 +19,6 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/CS 225/release-f2
 set(OLD_GLOB
   "/workspaces/CS 225/release-f22/cs225project/src/edge.hpp"
   "/workspaces/CS 225/release-f22/cs225project/src/graph.hpp"
-  "/workspaces/CS 225/release-f22/cs225project/src/node.hpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

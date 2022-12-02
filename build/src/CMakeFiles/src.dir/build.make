@@ -111,26 +111,11 @@ src/CMakeFiles/src.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/main.cpp.s"
 	cd "/workspaces/CS 225/release-f22/cs225project/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/workspaces/CS 225/release-f22/cs225project/src/main.cpp" -o CMakeFiles/src.dir/main.cpp.s
 
-src/CMakeFiles/src.dir/node.cpp.o: src/CMakeFiles/src.dir/flags.make
-src/CMakeFiles/src.dir/node.cpp.o: ../src/node.cpp
-src/CMakeFiles/src.dir/node.cpp.o: src/CMakeFiles/src.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/workspaces/CS 225/release-f22/cs225project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/src.dir/node.cpp.o"
-	cd "/workspaces/CS 225/release-f22/cs225project/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/node.cpp.o -MF CMakeFiles/src.dir/node.cpp.o.d -o CMakeFiles/src.dir/node.cpp.o -c "/workspaces/CS 225/release-f22/cs225project/src/node.cpp"
-
-src/CMakeFiles/src.dir/node.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/node.cpp.i"
-	cd "/workspaces/CS 225/release-f22/cs225project/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/workspaces/CS 225/release-f22/cs225project/src/node.cpp" > CMakeFiles/src.dir/node.cpp.i
-
-src/CMakeFiles/src.dir/node.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/node.cpp.s"
-	cd "/workspaces/CS 225/release-f22/cs225project/build/src" && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/workspaces/CS 225/release-f22/cs225project/src/node.cpp" -o CMakeFiles/src.dir/node.cpp.s
-
 # Object files for target src
 src_OBJECTS = \
 "CMakeFiles/src.dir/edge.cpp.o" \
 "CMakeFiles/src.dir/graph.cpp.o" \
-"CMakeFiles/src.dir/main.cpp.o" \
-"CMakeFiles/src.dir/node.cpp.o"
+"CMakeFiles/src.dir/main.cpp.o"
 
 # External object files for target src
 src_EXTERNAL_OBJECTS =
@@ -138,10 +123,9 @@ src_EXTERNAL_OBJECTS =
 src/libsrc.a: src/CMakeFiles/src.dir/edge.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/graph.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/main.cpp.o
-src/libsrc.a: src/CMakeFiles/src.dir/node.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/build.make
 src/libsrc.a: src/CMakeFiles/src.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/workspaces/CS 225/release-f22/cs225project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libsrc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/workspaces/CS 225/release-f22/cs225project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libsrc.a"
 	cd "/workspaces/CS 225/release-f22/cs225project/build/src" && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean_target.cmake
 	cd "/workspaces/CS 225/release-f22/cs225project/build/src" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src.dir/link.txt --verbose=$(VERBOSE)
 
