@@ -4,17 +4,18 @@
 // #  define CATCH_CONFIG_MAIN
 // #endif
 //#include "catch.hpp"
-
-#include <iostream>
-#include <fstream>
-#include "../includes/graph.hpp"
 #include <catch2/catch_test_macros.hpp>
+#include <iostream>
+//#include <fstream>
+#include "../src/graph.cpp"
+#include "../src/bfs.cpp"
+
 
 
 TEST_CASE("test_basic", "[test=basic][weight=1]")
 {
     Graph g = Graph();
-    g.readCSV("./data/sample.csv");
+    g.readCSV("../data/sample.csv");
     //g.printGraph();
     std::cout << "do i get here lol" << std::endl;
     REQUIRE(g.getAdjacencyList().size() == 3);
@@ -27,17 +28,22 @@ TEST_CASE("test_basic", "[test=basic][weight=1]")
 TEST_CASE("test_empty_line", "[test=emptyline][weight=1]")
 {
     Graph g = Graph();
-    g.readCSV("./data/sample_emptyline.csv");
-    g.printGraph();
+    g.readCSV("../data/sample_emptyline.csv");
+    //g.printGraph();
     REQUIRE(g.getAdjacencyList().size() == 3);
 }
 
 TEST_CASE("test_medium", "[test=medium][weight=1]")
 {
     Graph g = Graph();
-    g.readCSV("./data/sample_emptyline.csv");
-    g.printGraph();
-    // REQUIRE();
+    g.readCSV("../data/sample_emptyline.csv");
+    //std::cout << g.getAdjacency().
+    //REQUIRE();
+}
+
+TEST_CASE("bfs", "[test=bfs][weight=1]") {
+    BFS b = BFS("../data/sample.csv");
+    b.BFSWholeGraph();
 }
 
 //#endif  
