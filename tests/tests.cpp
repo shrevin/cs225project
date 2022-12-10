@@ -9,6 +9,7 @@
 //#include <fstream>
 #include "../src/graph.cpp"
 #include "../src/bfs.cpp"
+#include "../src/iterativedfs.cpp"
 
 
 
@@ -46,4 +47,18 @@ TEST_CASE("bfs", "[test=bfs][weight=1]") {
     b.BFSWholeGraph();
 }
 
+TEST_CASE("iterative_dfs_not_found", "[test=iterative_dfs][weight=1]") {
+    IterativeDfs d = IterativeDfs("../data/sample_copy.csv", "leagueoflegends", "inlandempire", 4);
+    REQUIRE(d.search() == false);
+}
+
+TEST_CASE("iterative_dfs_incorrect_depth", "[test=iterative_dfs][weight=1]") {
+    IterativeDfs d = IterativeDfs("../data/sample_copy.csv", "thehiddenbar", "pics", 1);
+    REQUIRE(d.search() == false);
+}
+
+TEST_CASE("iterative_dfs_correct_depth", "[test=iterative_dfs][weight=1]") {
+    IterativeDfs d = IterativeDfs("../data/sample_copy.csv", "thehiddenbar", "pics", 2);
+    REQUIRE(d.search() == true);
+}
 //#endif  
