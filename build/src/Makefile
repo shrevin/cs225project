@@ -131,6 +131,30 @@ src/fast:
 	cd "/workspaces/CS 225/release-f22/cs225project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
 .PHONY : src/fast
 
+bfs.o: bfs.cpp.o
+.PHONY : bfs.o
+
+# target to build an object file
+bfs.cpp.o:
+	cd "/workspaces/CS 225/release-f22/cs225project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/bfs.cpp.o
+.PHONY : bfs.cpp.o
+
+bfs.i: bfs.cpp.i
+.PHONY : bfs.i
+
+# target to preprocess a source file
+bfs.cpp.i:
+	cd "/workspaces/CS 225/release-f22/cs225project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/bfs.cpp.i
+.PHONY : bfs.cpp.i
+
+bfs.s: bfs.cpp.s
+.PHONY : bfs.s
+
+# target to generate assembly for a file
+bfs.cpp.s:
+	cd "/workspaces/CS 225/release-f22/cs225project/build" && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/bfs.cpp.s
+.PHONY : bfs.cpp.s
+
 edge.o: edge.cpp.o
 .PHONY : edge.o
 
@@ -212,6 +236,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... src"
+	@echo "... bfs.o"
+	@echo "... bfs.i"
+	@echo "... bfs.s"
 	@echo "... edge.o"
 	@echo "... edge.i"
 	@echo "... edge.s"
