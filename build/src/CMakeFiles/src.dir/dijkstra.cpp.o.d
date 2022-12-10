@@ -1,6 +1,6 @@
-src/CMakeFiles/src.dir/edge.cpp.o: \
-  /workspaces/cs225_fixed_10_12/release-f22/cs225project/src/edge.cpp \
-  /workspaces/cs225_fixed_10_12/release-f22/cs225project/src/edge.hpp \
+src/CMakeFiles/src.dir/dijkstra.cpp.o: \
+  /workspaces/cs225_fixed_10_12/release-f22/cs225project/src/dijkstra.cpp \
+  /workspaces/cs225_fixed_10_12/release-f22/cs225project/src/dijkstra.hpp \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iostream \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -173,4 +173,53 @@ src/CMakeFiles/src.dir/edge.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_ios.tcc \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ostream.tcc \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/istream \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/istream.tcc
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/istream.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/limits \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/map \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_tree.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/aligned_buffer.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/node_handle.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_map.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/utility \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_relops.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/array \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/uses_allocator.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_multimap.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/erase_if.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/map \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/map.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_sequence.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_base.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/concurrence.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_sequence.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_container.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_iterator.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_iterator.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/multimap.h \
+  /workspaces/cs225_fixed_10_12/release-f22/cs225project/src/graph.hpp \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/vector \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_bvector.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/vector.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/vector \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/fstream \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/codecvt.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/fstream.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/unordered_map \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable_policy.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/enable_special_members.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_map.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/unordered_map \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_unordered_container.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_unordered_base.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_unordered_container.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_local_iterator.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_local_iterator.tcc \
+  /workspaces/cs225_fixed_10_12/release-f22/cs225project/src/edge.hpp \
+  /workspaces/cs225_fixed_10_12/release-f22/cs225project/src/heap.hpp

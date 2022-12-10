@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/src.dir/dijkstra.cpp.o"
+  "CMakeFiles/src.dir/dijkstra.cpp.o.d"
   "CMakeFiles/src.dir/edge.cpp.o"
   "CMakeFiles/src.dir/edge.cpp.o.d"
   "CMakeFiles/src.dir/graph.cpp.o"
@@ -7,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/src.dir/main.cpp.o.d"
   "CMakeFiles/src.dir/node.cpp.o"
   "CMakeFiles/src.dir/node.cpp.o.d"
+  "CMakeFiles/src.dir/printheap.cpp.o"
+  "CMakeFiles/src.dir/printheap.cpp.o.d"
   "libsrc.a"
   "libsrc.pdb"
 )
