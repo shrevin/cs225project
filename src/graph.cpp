@@ -13,25 +13,26 @@ void Graph::addEdge(Vertex src, Vertex dest, Edge edge) {
     } else {
         adjacency_list[src].insert({dest, edge});
     }
-    bool src_in_vert = false;
-    bool dest_in_vert = false; 
+    // bool src_in_vert = false;
+    // bool dest_in_vert = false; 
 
-    for (size_t i = 0; i < vertices.size(); i++) {
-        if (src == vertices[i]) {
-            src_in_vert = true;
-        }
-        if (dest == vertices[i]) {
-            dest_in_vert = true;
-        }
-    }
+    // for (size_t i = 0; i < vertices.size(); i++) {
+    //     if (src == vertices[i]) {
+    //         src_in_vert = true;
+    //     }
+    //     if (dest == vertices[i]) {
+    //         dest_in_vert = true;
+    //     }
+    // }
 
-    if(!src_in_vert) {
-        vertices.push_back(src);
-    }
+    // if(!src_in_vert) {
+    //     vertices.push_back(src);
+    // }
 
-    if(!dest_in_vert) {
-        vertices.push_back(dest);
-    }
+    // if(!dest_in_vert) {
+    //     vertices.push_back(dest);
+    // }
+    
 }
 
 void Graph::splitString(const std::string & str1, char sep, std::vector<std::string> &fields) {
@@ -71,13 +72,23 @@ void Graph::readCSV(std::string path) {
         // line contains the first line
         std::vector<std::string> entries;
         splitString(line, ',', entries);
+        // std::cout << line << std::endl;
+        // for (std::string s: entries) {
+        //     std::cout << "new entry: " << s << std::endl;
+        // } 
         // readability is at index 22
-        double readability = std::stod(entries.at(22));
+        std::vector<std::string> meta_vec;
+        std::string meta = entries.at(5);
+        //splitString(meta, ',', meta_vec);
+        double readability = std::stod(Trim(entries.at(22)));
+        //std::cout << "READABILITY = " << readability << std::endl;
         // if adjacency_list does not source_id, create a node and add it to the map and create another map as its value
         // if adjacency_list does contain current subreddit, add dest node to the map<Node, Edge>, and create edge
         Vertex src =  Trim(entries.at(0));
         //Node(entries.at(2), entries.at(0));
         Vertex dest = Trim(entries.at(1));
+        vertices.insert(src);
+        vertices.insert(dest);
         //Node(entries.at(2), entries.at(1));
         Edge edge = Edge(src, dest, readability);
         addEdge(src, dest, edge);
@@ -99,4 +110,8 @@ void Graph::printGraph() const {
 
 std::unordered_map<Vertex, std::unordered_map<Vertex, Edge>> Graph::getAdjacencyList() {
     return adjacency_list;
+}
+
+ std::set<Vertex> Graph::getVertices(){
+    return vertices;
 }
