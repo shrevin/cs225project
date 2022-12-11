@@ -47,6 +47,5 @@ int main() {
         std::cout << "Unrecognizable selection!" << std::endl;
     }
     
-
     return 0;
 }
