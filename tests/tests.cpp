@@ -17,8 +17,6 @@ TEST_CASE("test_basic", "[test=basic][weight=1]")
 {
     Graph g = Graph();
     g.readCSV("../data/sample.csv");
-    //g.printGraph();
-    std::cout << "do i get here lol" << std::endl;
     REQUIRE(g.getAdjacencyList().size() == 3);
     REQUIRE(g.getAdjacencyList()["rddtgaming"].size() == 2);
     REQUIRE(g.getAdjacencyList()["playmygame"].size() == 1);
@@ -30,7 +28,6 @@ TEST_CASE("test_empty_line", "[test=emptyline][weight=1]")
 {
     Graph g = Graph();
     g.readCSV("../data/sample_emptyline.csv");
-    //g.printGraph();
     REQUIRE(g.getAdjacencyList().size() == 3);
 }
 
@@ -42,9 +39,22 @@ TEST_CASE("test_medium", "[test=medium][weight=1]")
     //REQUIRE();
 }
 
-TEST_CASE("bfs", "[test=bfs][weight=1]") {
+TEST_CASE("bfs_small", "[test=bfs][weight=1]") {
     BFS b = BFS("../data/sample.csv");
-    b.BFSWholeGraph();
+    std::list<Vertex> ans = {"dogemarket", "dogecoin", "playmygame", "gamedev", "rddtgaming", "random", "rddtrust"};
+    REQUIRE(b.BFSWholeGraph() == ans);
+}
+
+TEST_CASE("bfs_medium", "[test=bfs][weight=1]") {
+    BFS b = BFS("../data/sample_copy.csv");
+    std::list<Vertex> l = b.BFSWholeGraph();
+    // std::list<Vertex> ans = {"askanthropology", "askhistorians", "bluebirds", "soccer", 
+    // "badkarma", "gamesell", "reactiongifs", "bestof2013", "minecraftbattles", "minecraft", "gaybros",
+    // "askreddit", "todayilearned", "circlejerkcopypasta", "thehiddenbar", "writingprompts", "pics", "badhistory",
+    // "worldpolitics", "hailcorporate", "firstworldanarchists", "dogecoin", "novacoin", "metalcore", "corejerk",
+    // "suicidewatch", "offmychest", "jobs4dogecoins", "oldschoolcoolnsfw", "posthardcore", "theredlion", "locationbot",
+    // "legaladvice", "nfl", "cfb", "dogemarket", "playmygame", "gamedev"};
+    REQUIRE(b.BFSWholeGraph().size() == 43);
 }
 
 TEST_CASE("iterative_dfs_not_found", "[test=iterative_dfs][weight=1]") {
