@@ -45,3 +45,19 @@ std::map<Vertex, std::set<Vertex>> IterativeDfs::mapToSet() {
     }
     return to_return;
 }
+
+void IterativeDfs::printDFSResults() {
+    bool found = search();
+
+    std::cout<<""<<std::endl;
+    std::cout<<"ITERATIVE DEEPENING DFS RESULTS:"<<std::endl;
+    std::cout<<""<<std::endl;
+
+    if (found) {
+        std::cout<< "The " << destination_ << " subreddit was found within a depth of " << depth_ << " from the " << source_ << " subreddit." <<std::endl;
+    } else {
+        std::cout<< "The "<< destination_ << " subreddit was not reachable within a depth of " << depth_ << " from the " << source_ << " subreddit."<<std::endl;
+        std::cout<<destination_ << " may not be in the same connected component as " << source_ << ", or it is further than " << depth_ << " clicks from the source."<<std::endl;
+    }
+    std::cout<<""<<std::endl;
+}

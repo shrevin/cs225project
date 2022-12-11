@@ -11,6 +11,7 @@ class IterativeDfs {
     bool traversal(Vertex tempSrc, std::map<Vertex, std::set<Vertex>> map, int depth);
     bool search();
     std::map<Vertex, std::set<Vertex>> mapToSet();
+    void printDFSResults();
 
     private:
     std::unordered_map<Vertex, std::unordered_map<Vertex, Edge>> adjacency_list_;
