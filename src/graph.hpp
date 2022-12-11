@@ -3,6 +3,7 @@
 #include <vector>
 #include <fstream>
 #include <map>
+#include <set>
 #include <unordered_map>
 #include <string>
 
@@ -24,7 +25,7 @@ class Graph {
         void splitString(const std::string & str1, char sep, std::vector<std::string> &fields);
         void printGraph() const;
         std::unordered_map<Vertex, std::unordered_map<Vertex, Edge>> getAdjacencyList();
-        std::vector<Vertex> getVertices();
+        std::set<Vertex> getVertices();
         std::string TrimRight(const std::string & str);
         std::string TrimLeft(const std::string & str);
         std::string Trim(const std::string & str);
@@ -32,7 +33,7 @@ class Graph {
 
     private:
         //Stores graph as a map where key is node and value is a map of nodes with the edge in between the two nodes
-        std::vector<Vertex> vertices;
+        std::set<Vertex> vertices;
         std::unordered_map<Vertex, std::unordered_map<Vertex, Edge>> adjacency_list;
 
 };

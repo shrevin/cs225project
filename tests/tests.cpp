@@ -10,6 +10,7 @@
 #include "../src/graph.cpp"
 #include "../src/bfs.cpp"
 #include "../src/iterativedfs.cpp"
+#include "../src/dijkstra.hpp"
 
 
 
@@ -41,13 +42,13 @@ TEST_CASE("test_medium", "[test=medium][weight=1]")
 
 TEST_CASE("bfs_small", "[test=bfs][weight=1]") {
     BFS b = BFS("../data/sample.csv");
-    std::list<Vertex> ans = {"dogemarket", "dogecoin", "playmygame", "gamedev", "rddtgaming", "random", "rddtrust"};
+    std::set<Vertex> ans = {"dogemarket", "dogecoin", "playmygame", "gamedev", "rddtgaming", "random", "rddtrust"};
     REQUIRE(b.BFSWholeGraph() == ans);
 }
 
 TEST_CASE("bfs_medium", "[test=bfs][weight=1]") {
     BFS b = BFS("../data/sample_copy.csv");
-    std::list<Vertex> l = b.BFSWholeGraph();
+    std::set<Vertex> l = b.BFSWholeGraph();
     // std::list<Vertex> ans = {"askanthropology", "askhistorians", "bluebirds", "soccer", 
     // "badkarma", "gamesell", "reactiongifs", "bestof2013", "minecraftbattles", "minecraft", "gaybros",
     // "askreddit", "todayilearned", "circlejerkcopypasta", "thehiddenbar", "writingprompts", "pics", "badhistory",
@@ -80,5 +81,36 @@ TEST_CASE("iterative_dfs_correct_depth", "[test=iterative_dfs][weight=1]") {
 TEST_CASE("iterative_dfs_correct_depth_2", "[test=iterative_dfs][weight=1]") {
     IterativeDfs d = IterativeDfs("../data/sample_copy.csv", "circlejerkcopypasta", "todayilearned", 2);
     REQUIRE(d.search() == true);
+} 
+
+TEST_CASE("dijkstras_1", "[test=dijkstras_1][weight=1]") {
+    Graph g = Graph();
+    g.readCSV("../data/sample.csv");
+    Dijkstra d = Dijkstra(g, "random", "../data/sample.csv");
+    REQUIRE(d.getShortestDistance("random") == 0);
 }
-//#endif  
+
+TEST_CASE("dijkstras_2", "[test=dijkstras_2][weight=1]") {
+    Graph g = Graph();
+    g.readCSV("../data/sample.csv");
+    Dijkstra d = Dijkstra(g, "rddtgaming", "../data/sample.csv");
+    REQUIRE(d.getShortestDistance("rddtrust") == 10.0075);
+}
+TEST_CASE("dijkstras_3", "[test=dijkstras_3][weight=1]") {
+    Graph g = Graph();
+    g.readCSV("../data/sample_copy.csv");
+    Dijkstra d = Dijkstra(g, "metalcore", "../data/sample_copy.csv");
+    REQUIRE(d.getShortestDistance("bestof2013") == 33.3773638082);
+}
+TEST_CASE("dijkstras_4", "[test=dijkstras_4][weight=1]") {
+    Graph g = Graph();
+    g.readCSV("../data/sample_copy.csv");
+    Dijkstra d = Dijkstra(g, "dogemarket", "../data/sample_copy.csv");
+    REQUIRE(d.getShortestDistance("dogecoin") == 14.3002564103);
+}
+TEST_CASE("dijkstras_5", "[test=dijkstras_5][weight=1]") {
+    Graph g = Graph();
+    g.readCSV("../data/sample_copy.csv");
+    Dijkstra d = Dijkstra(g, "nfl", "../data/sample_copy.csv");
+    REQUIRE(d.getShortestDistance("metalcore") == 0);
+}
