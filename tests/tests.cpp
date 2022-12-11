@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <fstream>
-#include "../includes/graph.hpp"
+#include "../src/graph.hpp"
 #include <catch2/catch_test_macros.hpp>
 
 
