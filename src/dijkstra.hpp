@@ -12,11 +12,13 @@ typedef std::string Vertex;
 
 class Dijkstra {
     public:
-        Dijkstra();
-        Dijkstra(Graph graph, Vertex _start);
+        Dijkstra() ;
+        Dijkstra(Graph& graph, Vertex _start, std::string filepath);
         Vertex getStart() const { return start; }
-        map<Vertex, double> getDist() const { return distances; }
-        map<Vertex , Vertex> getPre() const { return predecessors; }
+        map<Vertex, double> getDistances() const { return distances; }
+        map<Vertex , Vertex> getPredecessors() const { return predecessors; }
+        double getShortestDistance(Vertex _end);
+        vector<Vertex> getShortestPath(Vertex _end);
         
     private:
         Vertex start;
