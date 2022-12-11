@@ -1,8 +1,6 @@
 #include "dijkstra.hpp"
 #include "graph.hpp"
 #include "edge.hpp"
-#include "heap.h"
-#include "heap.hpp"
 #include <map>
 #include <vector>
 #include <string>
