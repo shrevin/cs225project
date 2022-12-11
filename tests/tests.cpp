@@ -88,6 +88,11 @@ TEST_CASE("dijkstras_1", "[test=dijkstras_1][weight=1]") {
     g.readCSV("../data/sample.csv");
     Dijkstra d = Dijkstra(g, "random", "../data/sample.csv");
     REQUIRE(d.getShortestDistance("random") == 0);
+    std::vector<std::string> path = d.getShortestPath("random");
+    std::cout << "TEST 1" << std::endl;
+    for (size_t i = 0; i < path.size(); i++) {
+        std::cout << "Node " << i << " = " << path[i] << std::endl; 
+    }
 }
 
 TEST_CASE("dijkstras_2", "[test=dijkstras_2][weight=1]") {
@@ -95,18 +100,35 @@ TEST_CASE("dijkstras_2", "[test=dijkstras_2][weight=1]") {
     g.readCSV("../data/sample.csv");
     Dijkstra d = Dijkstra(g, "rddtgaming", "../data/sample.csv");
     REQUIRE(d.getShortestDistance("rddtrust") == 10.0075);
+    std::vector<std::string> path = d.getShortestPath("rddtrust");
+    std::cout << "TEST 2" << std::endl;
+    for (size_t i = 0; i < path.size(); i++) {
+        std::cout << "Node " << i << " = " << path[i] << std::endl; 
+    }
+
 }
 TEST_CASE("dijkstras_3", "[test=dijkstras_3][weight=1]") {
     Graph g = Graph();
     g.readCSV("../data/sample_copy.csv");
     Dijkstra d = Dijkstra(g, "metalcore", "../data/sample_copy.csv");
     REQUIRE(d.getShortestDistance("bestof2013") == 33.3773638082);
+    std::vector<std::string> path = d.getShortestPath("bestof2013");
+    std::cout << "TEST 3" << std::endl;
+    for (size_t i = 0; i < path.size(); i++) {
+        std::cout << "Node " << i << " = " << path[i] << std::endl; 
+    }
 }
 TEST_CASE("dijkstras_4", "[test=dijkstras_4][weight=1]") {
     Graph g = Graph();
     g.readCSV("../data/sample_copy.csv");
     Dijkstra d = Dijkstra(g, "dogemarket", "../data/sample_copy.csv");
     REQUIRE(d.getShortestDistance("dogecoin") == 14.3002564103);
+
+    std::vector<std::string> path = d.getShortestPath("dogecoin");
+    std::cout << "TEST 4" << std::endl;
+    for (size_t i = 0; i < path.size(); i++) {
+        std::cout << "Node " << i << " = " << path[i] << std::endl; 
+    }
 }
 TEST_CASE("dijkstras_5", "[test=dijkstras_5][weight=1]") {
     Graph g = Graph();
