@@ -13,6 +13,25 @@ void Graph::addEdge(Vertex src, Vertex dest, Edge edge) {
     } else {
         adjacency_list[src].insert({dest, edge});
     }
+    bool src_in_vert = false;
+    bool dest_in_vert = false; 
+
+    for (size_t i = 0; i < vertices.size(); i++) {
+        if (src == vertices[i]) {
+            src_in_vert = true;
+        }
+        if (dest == vertices[i]) {
+            dest_in_vert = true;
+        }
+    }
+
+    if(!src_in_vert) {
+        vertices.push_back(src);
+    }
+
+    if(!dest_in_vert) {
+        vertices.push_back(dest);
+    }
 }
 
 void Graph::splitString(const std::string & str1, char sep, std::vector<std::string> &fields) {
