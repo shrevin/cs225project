@@ -24,6 +24,10 @@ class Graph {
         void splitString(const std::string & str1, char sep, std::vector<std::string> &fields);
         void printGraph() const;
         std::unordered_map<Vertex, std::unordered_map<Vertex, Edge>> getAdjacencyList();
+        std::string TrimRight(const std::string & str);
+        std::string TrimLeft(const std::string & str);
+        std::string Trim(const std::string & str);
+
 
     private:
         //Stores graph as a map where key is node and value is a map of nodes with the edge in between the two nodes

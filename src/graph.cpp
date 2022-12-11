@@ -8,17 +8,10 @@ Graph::Graph() {
 
 void Graph::addEdge(Vertex src, Vertex dest, Edge edge) {
     if (adjacency_list.find(src) == adjacency_list.end()) {
-        //std::unordered_map<Node, Edge> map = std::unordered_map<Node, Edge>(); //= unordered_map<Vertex, Edge>();
-        // map2.insert({dest, edge});
         adjacency_list[src] = std::unordered_map<Vertex, Edge>();
         adjacency_list[src].insert({dest, edge});
-        //adjacency_list[src][dest] = edge;
     } else {
         adjacency_list[src].insert({dest, edge});
-        // std::unordered_map<Node, Edge> temp = adjacency_list[src];
-        // temp.insert(dest, edge);
-
-        // adjacency_list[src].insert({dest, edge});
     }
 }
 
@@ -33,6 +26,20 @@ void Graph::splitString(const std::string & str1, char sep, std::vector<std::str
     //return fields.size();
 }
 
+std::string Graph::TrimRight(const std::string & str) {
+    std::string tmp = str;
+    return tmp.erase(tmp.find_last_not_of(" ") + 1);
+}
+
+std::string Graph::TrimLeft(const std::string & str) {
+    std::string tmp = str;
+    return tmp.erase(0, tmp.find_first_not_of(" "));
+}
+
+std::string Graph::Trim(const std::string & str) {
+    std::string tmp = str;
+    return TrimLeft(TrimRight(str));
+}
 
 void Graph::readCSV(std::string path) {
     std::ifstream csv(path);
@@ -49,9 +56,9 @@ void Graph::readCSV(std::string path) {
         double readability = std::stod(entries.at(22));
         // if adjacency_list does not source_id, create a node and add it to the map and create another map as its value
         // if adjacency_list does contain current subreddit, add dest node to the map<Node, Edge>, and create edge
-        Vertex src =  entries.at(0);
+        Vertex src =  Trim(entries.at(0));
         //Node(entries.at(2), entries.at(0));
-        Vertex dest = entries.at(1);
+        Vertex dest = Trim(entries.at(1));
         //Node(entries.at(2), entries.at(1));
         Edge edge = Edge(src, dest, readability);
         addEdge(src, dest, edge);
