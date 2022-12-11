@@ -58,6 +58,11 @@ TEST_CASE("bfs_medium", "[test=bfs][weight=1]") {
     REQUIRE(b.BFSWholeGraph().size() == 43);
 }
 
+TEST_CASE("Empty_graph", "[test=iterative_dfs][weight=1]") {
+    IterativeDfs d = IterativeDfs("", "askreddit", "uncomfortableqs", 0);
+    REQUIRE(d.search() == false);
+}
+
 TEST_CASE("iterative_dfs_not_found", "[test=iterative_dfs][weight=1]") {
     IterativeDfs d = IterativeDfs("../data/sample_copy.csv", "leagueoflegends", "inlandempire", 4);
     REQUIRE(d.search() == false);
@@ -72,6 +77,11 @@ TEST_CASE("iterative_dfs_correct_depth", "[test=iterative_dfs][weight=1]") {
     IterativeDfs d = IterativeDfs("../data/sample_copy.csv", "thehiddenbar", "pics", 2);
     REQUIRE(d.search() == true);
 }
+
+TEST_CASE("iterative_dfs_correct_depth_2", "[test=iterative_dfs][weight=1]") {
+    IterativeDfs d = IterativeDfs("../data/sample_copy.csv", "circlejerkcopypasta", "todayilearned", 2);
+    REQUIRE(d.search() == true);
+} 
 
 TEST_CASE("dijkstras_1", "[test=dijkstras_1][weight=1]") {
     Graph g = Graph();
