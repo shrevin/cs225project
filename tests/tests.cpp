@@ -49,13 +49,27 @@ TEST_CASE("bfs_small", "[test=bfs][weight=1]") {
 TEST_CASE("bfs_medium", "[test=bfs][weight=1]") {
     BFS b = BFS("../data/sample_copy.csv");
     std::set<Vertex> l = b.BFSWholeGraph();
-    // std::list<Vertex> ans = {"askanthropology", "askhistorians", "bluebirds", "soccer", 
-    // "badkarma", "gamesell", "reactiongifs", "bestof2013", "minecraftbattles", "minecraft", "gaybros",
-    // "askreddit", "todayilearned", "circlejerkcopypasta", "thehiddenbar", "writingprompts", "pics", "badhistory",
-    // "worldpolitics", "hailcorporate", "firstworldanarchists", "dogecoin", "novacoin", "metalcore", "corejerk",
-    // "suicidewatch", "offmychest", "jobs4dogecoins", "oldschoolcoolnsfw", "posthardcore", "theredlion", "locationbot",
-    // "legaladvice", "nfl", "cfb", "dogemarket", "playmygame", "gamedev"};
-    REQUIRE(b.BFSWholeGraph().size() == 43);
+    std::set<Vertex> ans = {"askanthropology", "askhistorians", "askreddit", "badhistory", "badkarma", "bestof2013", "bluebirds", "cfb", "circlejerkcopypasta", 
+    "corejerk", "dogecoin", "dogemarket", "firstworldanarchists", "gamedev", "gamesell", "gaybros", "hailcorporate", 
+    "jobs4dogecoins", "legaladvice", "locationbot", "metalcore", "minecraft", "minecraftbattles", 
+    "nfl", "novacoin", "offmychest", "oldschoolcoolnsfw", "pics", "playmygame", "posthardcore", 
+     "reactiongifs", "soccer", "suicidewatch", "thehiddenbar", "theredlion", "todayilearned", 
+    "worldpolitics", "writingprompts"};
+    REQUIRE(l == ans);
+}
+
+TEST_CASE("bfs_two_nodes", "[test=bfs][weight=1]") {
+    BFS b = BFS("../data/single.csv");
+    std::set<Vertex> l = b.BFSWholeGraph();
+    std::set<Vertex> ans = {"leagueoflegends", "teamredditteams"};
+    REQUIRE(l == ans);
+}
+
+TEST_CASE("bfs_empty", "[test=bfs][weight=1]") {
+    BFS b = BFS("../data/empty.csv");
+    std::set<Vertex> l = b.BFSWholeGraph();
+    std::set<Vertex> ans = {};
+    REQUIRE(l == ans);
 }
 
 TEST_CASE("Empty_graph", "[test=iterative_dfs][weight=1]") {
@@ -107,6 +121,7 @@ TEST_CASE("dijkstras_2", "[test=dijkstras_2][weight=1]") {
     }
 
 }
+
 TEST_CASE("dijkstras_3", "[test=dijkstras_3][weight=1]") {
     Graph g = Graph();
     g.readCSV("../data/sample_copy.csv");
