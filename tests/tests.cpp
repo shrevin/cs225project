@@ -1,12 +1,5 @@
- 
-
-// #ifndef CATCH_CONFIG_MAIN
-// #  define CATCH_CONFIG_MAIN
-// #endif
-//#include "catch.hpp"
 #include <catch2/catch_test_macros.hpp>
 #include <iostream>
-//#include <fstream>
 #include "../src/graph.cpp"
 #include "../src/bfs.cpp"
 #include "../src/iterativedfs.cpp"
@@ -43,12 +36,12 @@ TEST_CASE("test_medium", "[test=medium][weight=1]")
 TEST_CASE("bfs_small", "[test=bfs][weight=1]") {
     BFS b = BFS("../data/sample.csv");
     std::set<Vertex> ans = {"dogemarket", "dogecoin", "playmygame", "gamedev", "rddtgaming", "random", "rddtrust"};
-    REQUIRE(b.BFSWholeGraph() == ans);
+    REQUIRE(b.BFSWholeGraph("../files/vertices_bfs.txt") == ans);
 }
 
 TEST_CASE("bfs_medium", "[test=bfs][weight=1]") {
     BFS b = BFS("../data/sample_copy.csv");
-    std::set<Vertex> l = b.BFSWholeGraph();
+    std::set<Vertex> l = b.BFSWholeGraph("../files/vertices_bfs.txt");
     std::set<Vertex> ans = {"askanthropology", "askhistorians", "askreddit", "badhistory", "badkarma", "bestof2013", "bluebirds", "cfb", "circlejerkcopypasta", 
     "corejerk", "dogecoin", "dogemarket", "firstworldanarchists", "gamedev", "gamesell", "gaybros", "hailcorporate", 
     "jobs4dogecoins", "legaladvice", "locationbot", "metalcore", "minecraft", "minecraftbattles", 
@@ -60,14 +53,14 @@ TEST_CASE("bfs_medium", "[test=bfs][weight=1]") {
 
 TEST_CASE("bfs_two_nodes", "[test=bfs][weight=1]") {
     BFS b = BFS("../data/single.csv");
-    std::set<Vertex> l = b.BFSWholeGraph();
+    std::set<Vertex> l = b.BFSWholeGraph("../files/vertices_bfs.txt");
     std::set<Vertex> ans = {"leagueoflegends", "teamredditteams"};
     REQUIRE(l == ans);
 }
 
 TEST_CASE("bfs_empty", "[test=bfs][weight=1]") {
     BFS b = BFS("../data/empty.csv");
-    std::set<Vertex> l = b.BFSWholeGraph();
+    std::set<Vertex> l = b.BFSWholeGraph("../files/vertices_bfs.txt");
     std::set<Vertex> ans = {};
     REQUIRE(l == ans);
 }

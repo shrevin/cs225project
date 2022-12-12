@@ -9,11 +9,11 @@ BFS::BFS(std::string filename) {
     adjacency_list = g.getAdjacencyList();
 }
 
-std::set<Vertex> BFS::BFSWholeGraph() {
+std::set<Vertex> BFS::BFSWholeGraph(std::string filepath_to_write_to) {
     std::unordered_map<Vertex, std::unordered_map<Vertex, Edge>>::iterator it;
     std::set<Vertex> traversed_vertices;
     std::ofstream myfile;
-    myfile.open ("../files/vertices_bfs.txt");
+    myfile.open (filepath_to_write_to); //"../files/vertices_bfs.txt");
     for (it = adjacency_list.begin(); it != adjacency_list.end(); it++) {
         implementBFS(it->first, traversed_vertices, myfile);
     }
