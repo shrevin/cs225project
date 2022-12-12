@@ -2,6 +2,7 @@
 #include "graph.hpp"
 #include "iterativedfs.hpp"
 #include "dijkstra.hpp"
+#include "bfs.hpp"
 
 int main() {
     // Graph g = Graph();
@@ -41,7 +42,12 @@ int main() {
         IterativeDfs d = IterativeDfs(filepath, source, target, depth);
         d.printDFSResults();
     } else if (traversal == "BFS") {
-        std::cout<<"hello"<<std::endl;
+        std::string filepath_to_write_to;
+        std::cout << "Enter a filepath to the file you want to store the output of BFS: ";
+        std::cin >> filepath_to_write_to;
+        BFS b = BFS(filepath);
+        std::set<Vertex> l = b.BFSWholeGraph(filepath_to_write_to);
+        std::cout << "Your output has been generated! Please navigate to " << filepath_to_write_to << std::endl;
     } else if (traversal == "Dijkstras") {
         Vertex source;
         std::cout << "Enter a source subreddit: ";
@@ -61,7 +67,7 @@ int main() {
         std::cout << "Node " << i << " = " << path[i] << std::endl; 
         }
     } else {
-        std::cout << "Unrecognizable selection!" << std::endl;
+        std::cout << "Unrecognizable selection! Run main again. " << std::endl;
     }
     
     return 0;
