@@ -7,7 +7,7 @@ class BFS {
     public:
         BFS(std::string filename);
         void implementBFS(Vertex start_vertex, std::set<Vertex>& vertices, std::ofstream& myfile);
-        std::set<Vertex> BFSWholeGraph();
+        std::set<Vertex> BFSWholeGraph(std::string filepath_to_write_to);
     private:
         Graph g;
         std::queue<Vertex> q;
