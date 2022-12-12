@@ -1,5 +1,15 @@
 # cs225project
 
+## Linkage and location of all major code, data, results, and delivarable files
+
+Our code for the Iterative deepening depth-first search can be found in the iterativedfs.cpp and iterativedfs.hpp files in the src folder. The code for our BFS algorithm can be found in the bfs.cpp and bfs.hpp files in src folder. The code for our Dijkstras algorithm can be found in the dijkstra.cpp and dijkstra.hpp files in the src folder. The results of this code can be found by running make && ./test in the terminal and running the test suite we have created. 
+
+## Commands to run the assignment
+
+The commands to run this assignment is ./main which will then follow up with a few prompts (what is the filepath? pick a traversal/algorithm, 
+
+## Description of test suite
+
 ## Leading Question 
 
 Our dataset is a subreddit-to-subreddit hyperlink network where each row corresponds to a source subreddit, which has metadata such as a target_subreddit, post_id, readability index, and more. The source subreddit represents a vertex, and the target subreddit, which is a subreddit that is linked on the source subreddit’s page, is a vertex connected to the source. From this dataset, we hope to explore the following questions: “How can you get from one subreddit to another with the least amount of human effort, defined by the average readability of the source and target post? Given a starting subreddit, which subreddits are a certain depth away?”. To help answer the first question, we plan to use Dijkstra’s Algorithm and for the second question, we plan to use Iterative deepening depth-first search. Each reddit post has a readability index as part of the metadata, and we plan to take the average of the source post’s readability and the target post’s readability for the edge weight from the source to target post. Readability index estimates how difficult it is to read text, and through our project, we want to find an efficient way to navigate between subreddits with the highest readability (easier to read).
