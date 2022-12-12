@@ -6,12 +6,12 @@
 class BFS {
     public:
         BFS(std::string filename);
-        void implementBFS(Vertex start_vertex, std::list<Vertex>& vertices, std::ofstream& myfile);
-        std::list<Vertex> BFSWholeGraph();
+        void implementBFS(Vertex start_vertex, std::set<Vertex>& vertices, std::ofstream& myfile);
+        std::set<Vertex> BFSWholeGraph();
     private:
         Graph g;
         std::queue<Vertex> q;
-        std::vector<Vertex> visited;
+        std::set<Vertex> visited;
         std::unordered_map<Vertex, std::unordered_map<Vertex, Edge>> adjacency_list;
        
 };
